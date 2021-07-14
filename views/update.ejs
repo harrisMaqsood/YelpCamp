@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>UPDATE</title>
+</head>
+<body>
+    <form action="/campgrounds/update" method="POST" autocomplete ="off" >
+        <input type="hidden" name="id" value="<%= data._id %>">
+        <input type="text" name="name" value="<%= data.name %>"><br>
+        <input type="text" name="imgUrl" value="<%= data.imageURL%>"><br>
+        <input type="text" name="description" value="<%= data.description %>">
+        <button type="submit">Update</button>
+
+    </form>
+</body>
+</html>

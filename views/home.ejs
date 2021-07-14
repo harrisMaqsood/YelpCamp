@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Home</title>
+</head>
+<body>
+    <form action="/campgrounds" method="POST" autocomplete ="off" >
+        <input type="text" name="name" placeholder="Name"><br>
+        <input type="text" name="imgUrl" placeholder="Image Url"><br>
+        <input type="text" name="description" placeholder="Description">
+        <button type="submit">Submit</button>
+
+    </form>
+    <div>
+        <% for(var iterator = 0 ; iterator < data.length ; iterator++){ %>
+            <div>
+                <h5><%= data[iterator].name %></h5>
+                <img src="<%= data[iterator].imageURL%>" alt="image">
+                <p><%= data[iterator].description %></p>
+                <a href="/campgrounds/delete/<%= data[iterator]._id %>">DELETE</a>
+                <a href="/campgrounds/update/<%= data[iterator]._id %>">UPDATE</a>
+                <br>
+            </div>
+            
+        <% } %>
+    </div>
+</body>
+</html>
